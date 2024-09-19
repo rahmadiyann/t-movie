@@ -1,8 +1,10 @@
+![DEMO](ss.jpg)
+
 # TMovie
 
 ## Overview
 
-TMovie is a Next.js-based application that allows users to browse and search for movies, view movie details, and manage their favorite movies. The app integrates with The Movie Database (TMDb) API to fetch movie data and provides a responsive, user-friendly interface.
+TMovie is a Next.js-based application that allows users to browse and search for movies, view movie details, and manage their favorite movies and ultimately watch it. The app integrates with The Movie Database (TMDb) API to fetch movie data and provides a responsive, user-friendly interface and vidsrc embed API to directly embed movie for easy streaming.
 
 Demo: [https://tmovie.rahmadiyan.my.id](https://tmovie.rahmadiyan.my.id)
 
@@ -13,6 +15,7 @@ Demo: [https://tmovie.rahmadiyan.my.id](https://tmovie.rahmadiyan.my.id)
 3. Movie details: Detailed information about each movie, including title, release date, overview, and poster.
 4. Favorite movies: Users can add movies to their favorites list and view them separately.
 5. Responsive design: The app is optimized for various screen sizes.
+6. Stream movies directly from anywhere
 
 ## Technology Stack
 
@@ -21,6 +24,7 @@ Demo: [https://tmovie.rahmadiyan.my.id](https://tmovie.rahmadiyan.my.id)
 - Tailwind CSS (for styling)
 - Zustand (for state management)
 - The Movie Database (TMDb) API
+- Vidsrc Embed API
 
 ## Key Components
 
@@ -28,39 +32,19 @@ Demo: [https://tmovie.rahmadiyan.my.id](https://tmovie.rahmadiyan.my.id)
 
 The app uses a consistent layout across all pages, defined in:
 
-```typescript:app/layout.tsx
-startLine: 1
-endLine: 24
-```
-
 This layout includes the `Navbar` component and wraps the main content in a container.
 
 ### Navbar
 
 The `Navbar` component provides navigation links and the search functionality:
 
-```typescript:app/components/Navbar.tsx
-startLine: 1
-endLine: 58
-```
-
 ### Movie Card
 
 The `MovieCard` component displays individual movie information in a grid:
 
-```typescript:app/components/MovieCard.tsx
-startLine: 1
-endLine: 51
-```
-
 ### Movie Details
 
 The movie details page is implemented in:
-
-```typescript:app/movie/[id]/page.tsx
-startLine: 1
-endLine: 70
-```
 
 This page fetches and displays detailed information about a specific movie.
 
@@ -68,21 +52,11 @@ This page fetches and displays detailed information about a specific movie.
 
 The favorites functionality is managed using Zustand:
 
-```typescript:app/store/store.ts
-startLine: 1
-endLine: 24
-```
-
 Users can view their favorite movies on the favorites page:
-
-```typescript:app/favorites/page.tsx
-startLine: 1
-endLine: 30
-```
 
 ## API Integration
 
-The app integrates with The Movie Database (TMDb) API to fetch movie data. API calls are made using the `fetch` function with appropriate headers and error handling.
+The app integrates with The Movie Database (TMDb) API to fetch movie data. API calls are made using the `fetch` function with appropriate headers and error handling. It also integrate embedding movie streaming using Vidsrc
 
 ## Styling
 
